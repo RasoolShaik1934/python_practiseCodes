@@ -231,12 +231,3 @@ the pandas functions that can be used to accomplish most of your data tasks are:
 
 #----------------------------------------------->>>>>
 #Demo test repeated for git push remove later
-'''Import/export data with pandas
-in pandas we can read by importing the data of CSV, excel, Jason, HTML….etc by using read_*
-we can export the data to csv, HTML, excel, Jason, SQL…….etc by using to_*
-    pd.read_csv(file name) : read the data from CSV file
-    pd.read_table(file name): read the data from determine text file
-    pd.read_excel(file name): read the data from the excel file
-    Pd.read_sql(query, connection_object): read the data from a SQL table/database
-    Pd.read_json(json_string): read the data from a Json formatted string, URL, or file
-    '''
