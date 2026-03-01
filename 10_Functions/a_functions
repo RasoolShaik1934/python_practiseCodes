@@ -1,0 +1,310 @@
+
+
+'''Functions:
+Sometimes we store a set of steps to be used over & over as needed several places throughout the program
+
+Function - A named sequence of reusable code that takes arguments(s) as input, does some computation, & then returns a result or results
+'''
+
+def thing1():
+  print("hello")
+  print("fun")
+
+thing1()
+
+#output:
+#hello
+#fun
+
+#stored (and reused) steps
+def thing():
+  print("hello")
+  print("fun")
+
+thing()
+
+print("zip")
+
+thing()
+
+#output:
+'''hello
+fun
+zip
+hello
+fun
+'''    
+
+
+'''
+Built-in functions: Python has many built-in functions that are always available to the program
+some of the built in functions are min(), max(), divmod(), input(),print(),abs(), round()...etc
+
+User-defined Functions: User defines the function & uses it later. To define a function we use "def" reserved word
+'''
+
+# Built-in functions
+Big = max("hello world") #max function is some stored code, that we use, it takes some input and produces output
+print(Big)
+
+#output:
+#w 
+    # here the w is the highest alphabet in the sequence of all alphabets
+
+tiny = min("hello world")
+print(tiny)
+
+#output:
+        # we have the out as space as it calculate from the space to z, so space is the minimum
+        
+        
+
+'''TYPE CONVERSIONS
+Here the data type can be changed using built-in functions like int(), float(), complex()..etc
+    .when you put an integer and floating point in an expression, the integer is implicitly converted to a float
+    .you can convert this with the built-in functions int() and float().
+'''
+
+print(float(99)/100)
+#output:0.99
+
+
+i = 42
+type(i)
+#output: int
+
+f = float(i)
+print(f)           
+#output: 42.0
+
+
+type(f)
+#output:float
+
+print(1+2*float(3)/4-5)
+#output: -2.5
+
+
+
+'''STRING CONVERSIONS : Here we can also convert string data type to other data types.
+    you can also use int() and float() to convert between strings and integers
+    you will get an error if the string does not contain numeric charecters
+    '''
+    
+a = '1234'  #string function
+print(type(a))
+
+ival = int(a)  # converted function
+print(type(ival))
+
+#output:
+#<class 'str'>
+#<class 'int'>
+
+
+sval = '123'
+type(sval)
+print(sval+1) 
+   
+ #output:  
+ #gives error because sting cannot be added to neumeric, hence we need to convert it to string
+ 
+#contd....
+sval = '123'
+ival = int(sval)
+type(ival)
+
+print(ival + 1)
+#output:124
+
+
+nsv = "hello bob"
+niv = int(nsv) 
+#throws error because characters cannot be converted to int
+
+
+'''
+Functions of our own
+    we create new function using def keyword followed by optional parameters within paranthesis
+    we indent the body of the function
+    this defines the function but does not execute the body of the function
+'''
+
+#building your own functions
+#User-defined function
+
+x = 5
+
+print("hello")
+
+def print_lyrics():
+  print("i'm a lumberjack, and i'm okay")
+  print("i sleep all night and i work all day")
+
+print("yo")
+
+x = x+2
+print(x)
+
+#output:
+#hello
+#yo
+#7
+
+
+#more on functions
+x = 5
+print("hello")
+
+def print_lyrics():
+  print("i'm a lumberjack, and i'm okay")
+  print("i sleep all night and i work all day")
+print_lyrics()
+
+x = x+2
+print(x)
+
+#output:
+'''
+hello
+i'm a lumberjack, and i'm okay
+i sleep all night and i work all day
+7
+'''
+
+
+'''
+Arguments
+    an argument is a value we pass into the function as its input when we call the function
+    they are used to direct the function to do different kinds of work when we call it a different times
+    we put the arguments in paranthesis after the name of the function
+'''
+
+#arguments
+big = max("hello world") # here hello world is the argument
+print(big)
+
+#OUTPUT:
+#W
+
+
+'''
+Parameter
+    a parameter is a variable which we use in the function defination
+    it is a "handle" that allows the code in the function to access the arguments for a particular function invocation.
+'''
+
+def greet(lang):
+  if lang == 'es':
+    print('hola')
+  elif lang == 'fr':
+    print("bonjour")
+  elif lang == 'en':
+    print('hello')
+  else:
+    print('lan not found:')  
+
+greet('en')
+greet("es")
+greet('fr')
+greet('gr')
+
+#OUTPUT:
+'''
+hello
+hola
+bonjour
+lan not found:
+'''
+
+'''
+Return values
+    often a function will take its arguments, do some computation and return a value based as the value to be used as the value of the function call in the calling expression.
+    the return keyword is used for this
+'''
+
+def greet():
+  return "hello"
+print(greet(),"glenn")
+print(greet(),"sally")
+print(greet(),"sammy")
+
+g = greet()
+print(g)
+
+#output:
+'''
+hello glenn
+hello sally
+hello sammy
+hello
+'''
+
+
+def add():
+    return 10 + 5
+
+x = add()
+print(x+1)
+#output:
+#16
+
+'''
+a fruitful function is one that produces a result
+the return statement ends the function execution and sendsback the result of the function
+'''
+
+def greet(lang):
+  if lang == 'es':
+    return 'hola'
+  elif lang == 'fr':
+    return "bonjour"
+  else:
+    return 'hello'
+print(greet('en'), 'gleen')
+print(greet("es"), 'sally')
+print(greet('fr'), 'michael')
+
+#output:
+'''
+hello gleen
+hola sally
+bonjour michael
+'''
+
+def greet():
+    return 'hola'
+print(greet(), 'gleen')
+print(greet(), 'sally')
+print(greet(), 'michael')
+
+#output:
+'''
+hola gleen
+hola sally
+hola michael
+'''
+
+
+'''Void(non-fruitful) functions
+    when a function doesn't return a value, we call it void function
+    functions that return values are "fruitful" functions
+    void functions are "not fruitful"
+'''
+def greet(lang):
+  if lang == 'es':
+    return
+  elif lang == 'fr':
+    return
+  else:
+    return
+print(greet('en'), 'gleen')
+print(greet("es"), 'sally')
+print(greet('fr'), 'michael')
+
+#output:
+'''
+ None gleen
+None sally
+None michael
+'''
