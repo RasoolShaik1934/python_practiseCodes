@@ -56,5 +56,54 @@ f = "Hello World"
 print(f[::2]) # Using indexing sequence
 # Output: HloWrd (every second character from the string)
 
+#Tripti code:
+# Accept a number till the user wants
+# FInd if the number is palindrome or not  - NITIN, 1001, 12321, 56765,...
+
+while True:
+    num = input('Number (enter 0 to STOP): ')
+    if int(num) == 0:
+        break
+    elif num == num[::-1]:
+        print("It's a palindrome")
+    else:
+        print("It's not a palindrome")
+
+print('End of code')
+
+#output:
+#Number (enter 0 to STOP): 1001
+#It's a palindrome        
+
+#---------------------->>
+
+word = 'india'
+word*3
+
+#output: 'indiaindiaindia'
+
+#---------------------->>
+word = 'ID453'
+word.isalnum()
+#output: True
+
+
+word = '453'
+word.isalnum()
+#output: True
+
+word = '%^$#@'
+word.isalnum()
+#output: False
+
+
+
+
+
+
+
+
+
+
 
 

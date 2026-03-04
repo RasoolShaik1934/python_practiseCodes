@@ -123,3 +123,75 @@ while index < len(a):
 14 n
 15 e
 '''
+
+
+#Trupti code:
+
+# Program to demonstrate basic data types
+age = 20                  # int
+height = 5.9              # float
+name = "Trupti"           # str
+is_student = True         # bool
+
+print("Age:", age)
+print("Height:", height)
+print("Name:", name)
+print("Is Student:", is_student)
+
+#output:
+#Age: 20
+#Height: 5.9
+#Name: Trupti
+#Is Student: True
+
+#----------------
+# Program using string functions
+text = "Welcome to Python Programming"
+
+print("Length:", len(text))
+print("Uppercase:", text.upper())
+print("Lowercase:", text.lower())
+print("Starts with 'Welcome':", text.startswith("Welcome"))
+print("Replace 'Python' with 'Java':", text.replace("Python", "Java"))
+
+#output:
+#Length: 30
+#Uppercase: WELCOME TO PYTHON PROGRAMMING
+#Lowercase: welcome to python programming
+#Starts with 'Welcome': True
+#Replace 'Python' with 'Java': Welcome to Java Programming
+
+
+# Program to calculate average marks and assign grade
+print("Student Grade Calculator")
+
+total_marks = 0
+subject_count = 5
+
+for i in range(1, subject_count + 1):
+    marks = float(input(f"Enter marks for Subject {i} (out of 100): "))
+    total_marks += marks
+
+average = total_marks / subject_count
+print("\nAverage Marks:", average)
+
+if average >= 90:
+    print("Grade: A")
+elif average >= 75:
+    print("Grade: B")
+elif average >= 60:
+    print("Grade: C")
+elif average >= 40:
+    print("Grade: D")
+else:
+    print("Grade: F (Fail)")
+
+#output:
+#Student Grade Calculator
+#Enter marks for Subject 1 (out of 100): 85
+#Enter marks for Subject 2 (out of 100): 90 
+#Enter marks for Subject 3 (out of 100): 78
+#Enter marks for Subject 4 (out of 100): 92
+#Enter marks for Subject 5 (out of 100): 88
+#Average Marks: 86.6
+#Grade: A

@@ -378,5 +378,88 @@ for i in range(1,10):
 81
   '''
   
+
+  '''------------------------------>>
+  Tripthi Madam code: 
+  '''
   
-  
+
+  # while loop
+
+# how the loop works
+#1 loop counter variable- initialize
+#2 condition to terminate
+#3 update the loop counter
+
+
+# syntax
+#while condition:
+#   statements....
+
+# 1,2,3,...10
+
+i = 1
+
+while i<=10:
+    print(i,end=' ')
+    i+=1
+
+#output:
+#1 2 3 4 5 6 7 8 9 10 
+
+
+
+#-----------------
+i = 10
+
+while i>=1:
+    print(i, end='*')    # end is a parameter with print()
+    i=i-1
+
+#output:
+#10*9*8*7*6*5*4*3*2*1*  
+
+
+#-----------------------
+# factorial of a number
+# 5! = 5*4*3*2*1
+
+num = 5
+fact = 1
+
+while num>=1:
+    fact = fact * num
+    num -= 1
+
+print(fact)
+
+#output:
+#120
+
+#-------------------------
+
+# Accept a number till the user wants
+# FInd if the number is palindrome or not  - NITIN, 1001, 12321, 56765,...
+
+while True:
+    num = input('Number (enter 0 to STOP): ')
+    if int(num) == 0:
+        break
+    elif num == num[::-1]:
+        print("It's a palindrome")
+    else:
+        print("It's not a palindrome")
+
+print('End of code')
+
+#output:
+#Number (enter 0 to STOP): 1001
+#It's a palindrome
+#Number (enter 0 to STOP): 1234
+#It's not a palindrome
+#Number (enter 0 to STOP): 12321    
+
+
+
+ 
+

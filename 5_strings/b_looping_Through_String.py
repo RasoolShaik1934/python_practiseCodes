@@ -71,9 +71,8 @@ for singleLetter in a:
   if singleLetter == 'l':
     count = count + 1
     print(count)
+
+
+ #Tripti code:
+ 
     
-
-
-  
-
-  

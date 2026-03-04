@@ -347,9 +347,57 @@ print(f"Largest number: {big}")
 #output: Largest number: 736
 
 
+import math
+
+num = int(input('Enter a number: '))
+
+length = len(str(num))
+sums=0
+
+for digit in str(num):
+    digit = int(digit)
+    #sums += (digit**length)
+    sums += pow(digit, length)
+
+if sums == num:
+    print("It's an armstrong number")
+else:
+    print("It's not an armstrong number")
+
+#output:
+#Enter a number: 153
+#It's an armstrong number
+
+    
+#------------------------------->>>
+# enter ten numbers, display its square
+# STOP the loopif the entered number is 100
+
+for i in range(10):
+    num = int(input('Enter a number: '))
+    if num == 100:
+        break
+    print(f'Number =  {num}| Square = {num*num}')
+
+print('End of code') 
+
+#output:
+#Enter a number: 5
+#Number =  5| Square = 25
+
+#Enter a number: 10
+#Number =  10| Square = 100
+#Enter a number: 100
+#End of code
 
 
+print(7888)
 
- 
+for i in range(5):
+    #print('9999999')
+    pass
 
+print('-------------')
+
+#The pass statement is a null operation; it does nothing when executed. It is used as a placeholder in situations where syntactically some code is required but you do not want to execute any code.  
 
