@@ -195,3 +195,112 @@ else:
 #Enter marks for Subject 5 (out of 100): 88
 #Average Marks: 86.6
 #Grade: A
+
+
+# Basic ATM simulator
+balance = 1000
+
+while True:
+    print("\n==== ATM Menu ====")
+    print("1. Check Balance")
+    print("2. Withdraw")
+    print("3. Deposit")
+    print("4. Exit")
+
+    try:
+        choice = int(input("Enter your choice (1-4): "))
+
+        if choice == 1:
+            print("Your Balance is ₹", balance)
+
+        elif choice == 2:
+            amount = float(input("Enter amount to withdraw: "))
+            if amount <= balance:
+                balance -= amount
+                print("Withdrawal Successful. New Balance is ₹", balance)
+            else:
+                print("Insufficient balance.")
+
+        elif choice == 3:
+            amount = float(input("Enter amount to deposit: "))
+            balance += amount
+            print("Deposit Successful. New Balance is ₹", balance)
+
+        elif choice == 4:
+            print("Thank you for using the ATM. Goodbye!")
+            break
+
+        else:
+            print("Invalid option. Please choose between 1-4.")
+
+    except ValueError:
+        print("Invalid input! Please enter a number.")
+#output:
+#==== ATM Menu ====
+#1. Check Balance
+#2. Withdraw    
+#3. Deposit
+#4. Exit
+#Enter your choice (1-4): 1
+#Your Balance is ₹ 1000
+
+# Count how many times each word appears (without using collections)
+text = input("Enter a sentence: ").lower()
+
+words = text.split()
+seen_words = []
+
+print("\nWord Frequency:")
+for word in words:
+    if word not in seen_words:
+        count = 0
+        for w in words:
+            if w == word:
+                count += 1
+        print(f"{word}: {count}")
+        seen_words.append(word)
+  
+#output:
+#Enter a sentence: Hello world hello
+#Word Frequency:
+#hello: 2
+#world: 1
+
+
+# Simple password strength checker
+password = input("Enter your password: ")
+
+print("\nPassword Check:")
+if len(password) < 8:
+    print("- Too short (minimum 8 characters required)")
+else:
+    print("- Length OK")
+
+if password.islower() or password.isupper():
+    print("- Add a mix of uppercase and lowercase letters")
+else:
+    print("- Letter case OK")
+
+if any(char.isdigit() for char in password):
+    print("- Contains digits ✅")
+else:
+    print("- Add at least one number")
+
+if any(char in "!@#$%^&*()_+" for char in password):
+    print("- Contains special characters ✅")
+else:
+    print("- Add special characters like !, @, #")
+
+print("\nPassword Strength Check Complete.")
+
+
+#output:
+#Enter your password: Pass123
+
+#Password Check:
+#- Too short (minimum 8 characters required)
+#- Add a mix of uppercase and lowercase letters
+#- Contains digits ✅
+#- Add special characters like !, @, #
+#Password Strength Check Complete.
+

@@ -12,6 +12,17 @@ Lists:
 .Standard heterogenous collection
 '''
 
+# list of text tokens (common in NLP)
+
+#         0            1        2            3     4      positive index number
+tokens = ['natural','language','processing','is','fun']
+#         -5          -4         -3          -2   -1      negative index number
+
+tokens
+
+#Output: ['natural', 'language', 'processing', 'is', 'fun']
+
+
 # List of Strings
          # values inside a list are items, are separated by comma delimited
 friendsNames = ['Joseph', 'Glenn', 'Sally']
