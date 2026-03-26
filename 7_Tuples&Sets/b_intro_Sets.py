@@ -210,3 +210,63 @@ print('Symmetric Diff =', A^B)
 #Intersection   = {4, 5}
 #Difference     = {1, 2, 3}
 #Symmetric Diff = {1, 2, 3, 6, 7, 8}
+
+
+#----------------------->>>
+#Trupti class
+
+
+categories = ['A','B','D','A','F','E','D']
+
+unique_categories = set(categories)
+unique_categories
+
+#output
+{'A', 'B', 'D', 'E', 'F'}
+
+
+'C' in unique_categories
+#output
+False   
+
+
+# SET - unordered, unique, immutable items/elements
+
+# set itself is mutable
+
+myset = {14, 'india',True, 45.98, 'Red'}
+myset
+#output
+{True, 14, 45.98, 'Red', 'india'}
+
+
+# set operations
+
+A = {1,2,3,4,5}
+B = {4,5,6,7,8}
+C = {4,7,8,9,10}
+A.union(B)
+#output
+{1, 2, 3, 4, 5, 6, 7, 8}
+
+A.union(B,C)
+#output
+#{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+A.intersection(B)
+#output
+{4, 5}  
+
+A.intersection(B,C)
+#output
+{4} 
+
+A.difference(B)
+#output
+{1, 2, 3}   
+
+# uncommon elelments bet both sets
+
+A.symmetric_difference(B)
+#output
+{1, 2, 3, 6, 7, 8}

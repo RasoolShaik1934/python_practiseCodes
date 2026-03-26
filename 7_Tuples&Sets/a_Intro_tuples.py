@@ -20,13 +20,17 @@
 #p1
 x = ('Glen', 'Sally', 'Joseph')
 print(x[2])
+#output: Joseph
 
 #p2
 y = (1, 9, 2)
 print(y)
+#output: (1, 9, 2)
 
 #p3
 print(max(y))
+#output: 9
+
 
 #p4
 for values in y:
@@ -42,6 +46,7 @@ for values in y:
 x = [9, 8, 7]
 x[2] = 6
 print(x)
+#output: [9, 8, 6]
 
 #p5
  #Strings are immutable
@@ -58,7 +63,8 @@ z[2] = 0
 # Tuples are immutable
   
 z = (5, 4, 3)
-z[2] = 0   
+z[2] = 0
+#output: TypeError: 'tuple' object does not support item assignment  
 
 
 
@@ -373,3 +379,44 @@ print(sorted([(v, k) for k, v in c.items()]))
 
 #output
 #[(1, 'b'), (10, 'a'), (22, 'c')]
+
+
+
+#------------------------------>>
+#Trupti class example:
+
+
+# tuple as dict keys
+
+
+ratings = {
+    ('user1','movieA'): 5,
+    ('user2','movieA'): 4,
+    ('user1','movieB'): 3,
+}
+ratings
+
+# output:
+#{('user1', 'movieA'): 5, ('user2', 'movieA'): 4, ('user1', 'movieB'): 3}  
+
+
+# stud score (math,sci, eng)
+
+stud_score = (85,90,78)
+
+avg_score = sum(stud_score)/len(stud_score)
+
+avg_score
+
+# output: 84.33333333333333
+
+#---------------
+students = [(85,75,68),(77,94,90),(95,80,88)]
+
+# find student with high math score
+
+high_math = [score  for score in students if score[0]>80]
+
+high_math
+
+# output: [(85, 75, 68), (95, 80, 88)]

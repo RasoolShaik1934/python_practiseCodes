@@ -180,3 +180,39 @@ print(range(len(friends))) # the output will be range of values/elements in a li
 frineds = ['Joseph', 'Glenn', 'Sally','asdfasdfa','sdfasdfasdfg','sdfaagagfalhabfka']
 print(range(len(friends))) # the output will be range of values/elements in a list
 #output: range(0, 6)
+
+
+#------------------------------>>
+
+  # enumerate()
+
+names = ['Joseph', 'Glenn', 'Sally']
+
+for data in enumerate(names):
+  print(data)
+
+#output:
+'''(0, 'Joseph')
+(1, 'Glenn')
+(2, 'Sally')
+'''
+
+for data in enumerate(names, 101):
+  print(data)
+
+#output:
+'''(101, 'Joseph')
+(102, 'Glenn')
+(103, 'Sally')
+'''     
+
+
+for ind,data in enumerate(names):
+  print(ind,'-',data)
+
+#output:
+'''
+0 - Joseph
+1 - Glenn
+2 - Sally
+'''
