@@ -293,3 +293,249 @@ Topics covered:- Introduction to dictionaries
 - Using two iteration variables in loops
 - Example program for counting words in a file
 '''
+
+
+#-------------------------------->
+
+sample_data = {
+    'feature1': 10.5,
+    'feature2': 'Category A',
+    'feature3': [150,43,28],
+    'label':1,
+    'result': True
+}
+sample_data
+
+
+#output:
+{'feature1': 10.5,
+ 'feature2': 'Category A',
+ 'feature3': [150, 43, 28],
+ 'label': 1,
+ 'result': True} 
+
+
+sample_data['result'] = False   # update value
+sample_data
+
+#output:
+{'feature1': 10.5,
+ 'feature2': 'Category A',
+ 'feature3': [150, 43, 28],     
+    'label': 1,
+    'result': False}
+
+sample_data['101'] = 'A8000000000000000'
+sample_data
+
+#output:
+{'feature1': 10.5,
+    'feature2': 'Category A',
+    'feature3': [150, 43, 28],
+    'label': 1,
+    'result': False,
+    '101': 'A8000000000000000'} 
+
+#------------------------------
+
+
+api_response = {
+        "status": "success",
+        "data": {
+            "user": {  "id": 123, "name": "John Doe",
+                "profile": {  "age": 28,  "location": "New York"   }
+            }
+        }
+    }
+api_response
+
+#output:
+{'status': 'success',
+ 'data': {'user': {'id': 123,
+   'name': 'John Doe',
+   'profile': {'age': 28, 'location': 'New York'}}}}    
+
+
+sample_data.keys()
+#output:
+dict_keys(['feature1', 'feature2', 'feature3', 'label', 'result', '101'])
+
+
+sample_data.keys()
+#output:
+dict_values([10.5, 'Category A', [150, 43, 28], 1, False, 'A8000000000000000']) 
+
+
+sample_data.keys()
+#output:
+dict_items([('feature1', 10.5), ('feature2', 'Category A'), ('feature3', [150, 43, 28]), ('label', 1),          
+('result', False), ('101', 'A8000000000000000')])
+
+
+#---------------------------
+
+sample_data = {'d':78, 'a':90, 'c':98, 'w':70, 'b':50}
+sample_data
+
+#output:
+{'d': 78, 'a': 90, 'c': 98, 'w': 70, 'b': 50}
+
+
+sample_data = {'d':78, 'a':90, 'c':98, 'w':70, 'b':50}
+sample_data
+#output:
+{'d': 78, 'a': 90, 'c': 98, 'w': 70, 'b': 50}   
+
+
+for k,v in sample_data.items():
+  print(k,'-',v)
+
+#output:
+d - 78
+a - 90
+c - 98
+w - 70
+b - 50  
+
+
+sample_data2 = {}
+
+for k,v in sample_data.items():
+  sample_data2[v] = k
+
+sample_data2
+
+#output:
+{78: 'd', 90: 'a', 98: 'c', 70: 'w', 50: 'b'}
+
+
+sample_data[('user1','movieA')] = 4
+sample_data
+#output:
+{'d': 78,
+ 'a': 90,
+ 'c': 98,
+ 'w': 70,
+ 'b': 50,
+ ('user1', 'movieA'): 4}    
+
+
+#--------------------------------
+
+progLang = {
+        "Py": {
+            "year": 1991,
+            "creator": "G. van Rossum",
+        },
+        "Java": {
+            "year": 1995,
+            "creator": "J. Gosling",
+        },
+        "C#": {
+            "year": 2000,
+            "creator": "Microsoft",
+        }
+    }
+
+progLang
+
+
+#output:
+{'Py': {'year': 1991, 'creator': 'G. van Rossum'},
+ 'Java': {'year': 1995, 'creator': 'J. Gosling'},
+ 'C#': {'year': 2000, 'creator': 'Microsoft'}}  
+
+
+progLang = {
+        "Py": {
+            "year": 1991,
+            "creator": "G. van Rossum",
+        },
+        "Java": {
+            "year": 1995,
+            "creator": "J. Gosling",
+        },
+        "C#": {
+            "year": 2000,
+            "creator": "Microsoft",
+        }
+    }
+
+progLang
+
+#output:
+{'Py': {'year': 1991, 'creator': 'G. van Rossum'},
+ 'Java': {'year': 1995, 'creator': 'J. Gosling'},
+ 'C#': {'year': 2000, 'creator': 'Microsoft'}}  
+
+
+progLang = {
+        "Py": {
+            "year": 1991,
+            "creator": "G. van Rossum",
+        },
+        "Java": {
+            "year": 1995,
+            "creator": "J. Gosling",
+        },
+        "C#": {
+            "year": 2000,
+            "creator": "Microsoft",
+        }
+    }
+
+progLang
+
+#output:
+{'Py': {'year': 1991, 'creator': 'G. van Rossum'},
+ 'Java': {'year': 1995, 'creator': 'J. Gosling'},
+ 'C#': {'year': 2000, 'creator': 'Microsoft'}}      
+
+#----------------------
+
+names = ['Alice', 'Bob', 'Charlie', 'Diana']
+scores = [85, 55, 92, 45]
+mydict = {k:v   for k,v in zip(names,scores)}
+mydict
+
+#output:
+{'Alice': 85, 'Bob': 55, 'Charlie': 92, 'Diana': 45}
+
+
+
+names = ['Alice', 'Bob', 'Charlie', 'Diana']
+scores = [85, 55, 92, 45]
+ratings = [4,5,2,3]
+mydict = {(n,s):r   for n,s,r in zip(names,scores,ratings)}
+mydict
+
+#output:
+{('Alice', 85): 4, ('Bob', 55): 5, ('Charlie', 92): 2, ('Diana', 45): 3}
+
+
+#------------------------
+
+# Accept a text file
+# Count the words and it's occurance
+# And store it in a dictionary
+
+# If we have a text file
+filePointer = open('fruits.txt') # pass the text file
+countdict = {}
+
+for line in filePointer:
+        words = line.split()
+        for word in words:
+            if word not in countdict:
+                countdict[word] = 1
+            else:
+                countdict[word] = countdict[word] + 1
+
+countdict
+
+
+
+
+
+
+
