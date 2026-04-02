@@ -308,3 +308,198 @@ print(greet('fr'), 'michael')
 None sally
 None michael
 '''
+
+#------------------------------>>>
+
+#Trupti class
+
+# function without an argument
+
+def sums():
+  n1 = 10
+  n2 = 20
+  n3 = n1+n2
+  print(f'Sum = {n3}')
+
+# main code
+sums()
+
+#output:
+#Sum = 30
+
+
+
+# function without an argument
+
+def sums(n1,n2):          # ni,n2 are the parameters
+  n3 = n1+n2
+  print(f'Sum = {n3}')
+
+# main code
+a = 34
+b = 90
+sums(a,b)   # passing arguments to the function
+
+#output:
+#Sum = 124  
+
+#------------
+# function to greet the users
+
+def greet1(pname):
+  '''This function will print a greet message along with the name
+  It has 1 argument'''
+  print(f'Good morning {pname}')
+  print(name is pname)
+
+
+# main code
+name = input('--> ')
+greet1(name)    # calling the function
+
+greet1('John')
+
+#output:
+'''--> Trupti
+Good morning Trupti
+True
+Good morning John
+True
+''' 
+#------------------------>>
+
+
+# function without an argument
+
+def sums(n1,n2):          # ni,n2 are the parameters
+  n3 = n1+n2
+  return n3
+
+# main code
+a = 34
+b = 90
+c = sums(a,b)   # passing arguments to the function
+
+print(c)
+print(sums(45,32))
+
+#---------------------------->>>
+
+# function without an argument
+
+def sums(n1,n2):          # ni,n2 are the parameters
+  n3 = n1+n2
+  return n3
+# main code
+a = 34
+b = 90
+c = sums(a,b)   # passing arguments to the function
+print(c)
+print(sums(45,32))
+
+#output:
+(57, 33, 540, 3.75)
+
+#----------------------------->>>
+
+def greet(name = 'Guest'):
+  print(f"Hello {name}!")
+  return
+
+greet('John')
+greet()
+
+#output:
+''' Hello John!
+Hello Guest!
+'''   
+# Variable length argument - *args, **kwargs
+
+#------------------------------>>>
+
+
+def sumNumbers(*values):
+  sums = 0
+  for i in values:
+    sums += i
+  print(sums)
+
+# main code
+sumNumbers(5,2,3,4)
+
+sumNumbers(9,12,3,6,4,7)
+
+sumNumbers(2,15,87,69,33,22,57,64)
+
+#output:
+14
+41
+349
+
+#-------------------------------->>>>
+#def printInfo(**kwargs):
+
+def printInfo(**var):
+  print(var)
+  return
+
+printInfo(name = 'Henry', age = 25)
+printInfo(hobby = 'swimming', name = 'Henry', age = 25)
+printInfo(dept = 'sales', age = 25, location = 'Mumbai', gender='F')
+
+#output:
+{'name': 'Henry', 'age': 25}
+{'hobby': 'swimming', 'name': 'Henry', 'age': 25}
+{'dept': 'sales', 'age': 25, 'location': 'Mumbai', 'gender': 'F'}
+
+
+#0------------------------------>>>>
+
+#def printInfo(**kwargs):
+
+def printInfo(**var):
+  for k,v in var.items():
+    print(k,'-',v)
+  return
+
+printInfo(name = 'Henry', age = 25)
+printInfo(hobby = 'swimming', name = 'Henry', age = 25)
+printInfo(dept = 'sales', age = 25, location = 'Mumbai', gender='F')
+
+#output:
+''' name - Henry
+age - 25
+hobby - swimming
+name - Henry
+age - 25
+dept - sales
+age - 25
+location - Mumbai
+gender - F
+'''
+
+
+#------------------------------->>>
+
+l1 = [6,3,4,6]
+l2 = l1            # l2 shallow copy of l1
+
+l2 is l1
+
+#output:
+True  
+
+#------------------------------->>>
+
+def myfunc(x):
+  return x*x
+
+print(type(myfunc))    # myfunc is an object/variable of the 'function' class
+#output:
+<class 'function'>
+
+
+
+
+
+

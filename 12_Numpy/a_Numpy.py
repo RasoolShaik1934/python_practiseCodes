@@ -396,3 +396,74 @@ print(arr['salary'])
 
 #output:
 '''[10000.12 20000.5 ]'''
+
+#--------------------->>
+
+ar/r = np.array(([1,2,3],[4,5,6]))
+arr
+#output:
+'''array([[1, 2, 3],
+       [4, 5, 6]])'''   
+
+
+arr = np.zeros(5)
+arr
+#output:'''array([0., 0., 0., 0., 0.])'''
+
+
+arr = np.zeros((3,5))
+arr
+#output:
+'''
+array([[0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.]])
+'''
+
+
+arr = np.zeros((3,5,2))  # 3 elements with 5x2 matrix
+arr
+
+#output:
+
+
+'''array([[[0., 0.],
+        [0., 0.],
+        [0., 0.],
+        [0., 0.],
+        [0., 0.]],
+
+       [[0., 0.],
+        [0., 0.],
+        [0., 0.],
+        [0., 0.],
+        [0., 0.]],
+
+       [[0., 0.],
+        [0., 0.],
+        [0., 0.],
+        [0., 0.],
+        [0., 0.]]])
+        '''
+
+
+arr = np.ones((2,3,5))*5    # broadcasting happens
+arr
+
+#output:
+'''array([[[5., 5., 5., 5., 5.],
+        [5., 5., 5., 5., 5.],
+        [5., 5., 5., 5., 5.]],
+
+       [[5., 5., 5., 5., 5.],
+        [5., 5., 5., 5., 5.],
+        [5., 5., 5., 5., 5.]]])
+        '''     
+
+ # np.arange(start,stop,step)
+
+ # linspace():-   np.linspace(start, stop, num)
+
+ # linspace():-   np.linspace(start, stop, num)
+
+ # linspace():-   np.linspace(start, stop, num)
