@@ -336,3 +336,331 @@ def decorator_fn(func):
 @decorator_fn
 def some_fn(*arg):
     pass
+
+
+#----------------------------------->>>>
+#Trupti Class codes:
+
+# Higher order functions - a function which accepts another function as an argument
+# and returns a function as a result
+
+def myfuncw(y):
+  return y/y
+
+myfuncw(20)
+#output: 1.0
+
+
+#----------------------->>>
+# myApply is a higher order function
+
+def myApply(function1, n):
+  '''higher order function example'''
+  print('********************')
+  return function1(n)        # returning function1
+
+
+# main code
+myApply(myfunc, 30)     # sending myfunc as an argument
+
+#output:
+#  ********************
+# 900
+
+
+# lambda function
+# syntax:-    lambda arguments: expression
+
+cube = lambda x: x**3
+cube(3)
+#output: 27
+
+
+product = lambda x,y: x*y
+product(12,45)
+#output: 540
+
+#-------------------------->>
+
+# filter, map, reduce
+# syntax:-    filter(function, sequence)
+# filter is a higher order function
+
+mylist = [5,2,3,-9,7,-3,67,-12,46]
+newlist = list(filter(lambda x: x>0  , mylist))
+newlist
+#output: [5, 2, 3, 7, 67, 46]
+
+
+values = tuple(newlist)
+values
+#output: (5, 2, 3, 7, 67, 46)
+
+
+mylist = [5,2,3,-9,7,-3,67,-12,46]
+newlist = list(filter(lambda x: x>0 and x<50  , mylist))
+newlist
+
+#output: [5, 2, 3, 7, 46]
+
+#--------------------------->>>
+# map syntax:-map(function, sequence)
+
+
+birds = ['parrot','crow','stork']
+upperBirds = list(map(lambda b: b.upper(), birds))
+upperBirds
+
+#output: ['PARROT', 'CROW', 'STORK']
+
+#---------------------------    
+
+# Scale marks to a 0–1 range (important in ML preprocessing).
+# Sample marks out of 100
+marks = [45, 88, 72, 90, 55]
+# divide each number by 100
+norMarks = list(map(lambda m: m/100  , marks))
+norMarks
+#output: [0.45, 0.88, 0.72, 0.9, 0.55]
+
+
+#---------------------------->>>
+'''
+Data Cleaning using map() and filter():-
+Suppose you have a dataset of ages, and you want to:
+Convert ages into categories (Young, Adult, Senior)
+Remove invalid age entries
+'''
+# Sample raw age data (some invalid)
+ages = [15, 25, -3, 120, 30, 70, 200]
+
+# step 1: remove invalid ages
+valid_ages = list(filter(lambda age: age>0 and age < 100 , ages))
+valid_ages
+#output: [15, 25, 30, 70]
+
+'''
+Data Cleaning using map() and filter():-
+Suppose you have a dataset of ages, and you want to:
+Convert ages into categories (Young, Adult, Senior)
+Remove invalid age entries
+'''
+# Sample raw age data (some invalid)
+ages = [15, 25, -3, 120, 30, 70, 200]
+
+# step 1: remove invalid ages
+valid_ages = list(filter(lambda age: age>0 and age < 100 , ages))
+valid_ages
+#output: [15, 25, 30, 70]
+
+# step 2: categorize age using map
+# Convert ages into categories (Young, Adult, Senior)
+
+categories = list(map(lambda age: "Young" if age<20 else ("Adult"  if age < 60 else "Senior"),\
+                 valid_ages))
+categories
+#output: ['Young', 'Adult', 'Adult', 'Senior']
+
+#------------------------------->>>
+# Sample raw age data (some invalid)
+ages = [15, 25, -3, 120, 30, 70, 200]
+
+def isValidAge(age):
+  return age>0 and age<100
+
+validAges = list(filter(isValidAge, ages))
+
+validAges
+#output: [15, 25, 30, 70]
+
+
+#------------------------------>>>
+
+
+# reduce
+# syntax:    reduce(function, iterable/sequence)
+# function with 2 arguments
+
+from functools import reduce
+nums = [4,2,3,1]
+result = reduce(lambda x,y: x+y , nums)
+result
+#output: 10
+
+'''result = reduce(lambda x, y: x + y, nums)
+```
+| Part | Meaning |
+|---|---|
+| `lambda x, y: x + y` | A function that **adds two numbers** |
+| `nums` | The list to reduce |
+| `x` | Accumulated result so far |
+| `y` | Next element in the list |
+
+'''
+#---------------
+nums = ['a','g','eeee','t']
+result = reduce(lambda x,y: x+y , nums)
+result
+#output: 'ageeeet'
+
+
+
+#----------------------------->>>
+'''
+Generators
+
+A Generator in Python is a function that returns an iterator using the Yield keyword.
+A generator function in Python is defined like a normal function,
+but whenever it needs to generate a value, it does so with the yield keyword rather than return.
+If the body of a def contains yield,
+the function automatically becomes a Python generator function.
+
+Note:
+Python generators allows developers to generate sequences of values on the fly.
+Unlike lists or arrays, generators don't store all the values in memory at once,
+which can be very useful when working with large data sets or infinite sequences.
+'''
+'''
+A generator function looks like a normal function but uses yield instead of return.
+It does not run immediately — it returns a generator object that produces values one at a time, on demand.
+'''
+
+def generatorFunc():
+  for i in range(5):
+    print('hello')
+    yield i
+
+# main code
+genObj = generatorFunc()   # create a generator object
+
+#type(generatorFunc)
+print(next(genObj))
+print(next(genObj))
+print(next(genObj))
+print(next(genObj))
+print(next(genObj))
+
+#output:
+# hello
+# 0
+# hello
+# 1
+# hello     
+# 2
+# hello
+# 3
+# hello
+# 4
+
+#------------------------->>
+
+def generatorFunc():
+  for i in range(5):
+    print('hello')
+    yield i
+
+# main code
+genObj = generatorFunc()   # create a generator object
+
+# genObj becomes an itarable (can use it with for loop)
+
+for j in genObj:
+  print(j)
+
+  #output:
+# hello
+# 0
+# hello
+# 1
+# hello
+# 2
+# hello
+# 3
+# hello
+# 4 
+
+#---------------------------------------------------------->>>>
+
+'''Decorator
+    A Decorator takes a function as an argument, retuns a new function that is an enhancement of the original function
+    '''
+
+def msgFunc():
+  print('This is my function')
+  return 'such an amazing day'
+
+msgFunc()
+#output: This is my function
+#output: 'such an amazing day'
+
+#----------------------------------->>>>>
+
+# enhance the working of the function
+# return the message in upper case
+
+# creating the decorator
+
+def uppercase_decorator(myfunction):
+  def wrapperFunc():
+    func = myfunction()  # the returned value from myfunction will get stored in func
+    makeUppercase = func.upper()
+    return makeUppercase
+  return wrapperFunc
+
+#------------------------------>>
+# let's apply the decorator
+# use the @ symbol to apply it on a function
+
+@uppercase_decorator
+def msgFunc():
+  #print('This is my function')
+  return 'such an amazing day'
+
+'''
+internally uppercase_decorator will be an outer function
+and msgFunc will be send as an argument and act like an inner function
+'''
+
+msgFunc()
+#output: 'SUCH AN AMAZING DAY'
+
+#-------------------------------->>
+
+# Timing a model training step using a decorator
+
+# decorator to track execution time of a model training
+
+import time
+
+# decorator to measure time
+def timer(func):
+  def wrapper():
+    start = time.time()
+    func()
+    end = time.time()
+    print(f"Execution time: {end - start: .2f} seconds")
+  return wrapper
+
+@timer
+def train_model():
+  print('Training model...')
+  time.sleep(2)   # simulate training time
+
+train_model()
+
+
+#---------------------------------->>
+
+def decoratorFunc(func):
+    def wrapper(name):
+      name1 = func(name.upper())
+      return name1
+    return wrapper
+
+@decoratorFunc
+def greet(name):
+  print(name)
+
+greet("John")
+#output: JOHN
+
